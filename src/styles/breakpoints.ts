@@ -1,6 +1,6 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
-export type BreakpointName = "xs" | "sm" | "md" | "lg" | "xl";
+export type BreakpointName = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export const breakpoints: { [key in BreakpointName]: number } = {
   // Mobile XS
@@ -31,10 +31,7 @@ export function mediaQueryUp(breakpointName: BreakpointName, content: string) {
 }
 
 // Generates a media query that applies the provided style to screen sizes LOWER than the provided size.
-export function mediaQueryBelow(
-  breakpointName: BreakpointName,
-  content: string
-) {
+export function mediaQueryBelow(breakpointName: BreakpointName, content: string) {
   const breakpoint = `${breakpoints[breakpointName]}px`;
 
   return css`
@@ -47,7 +44,7 @@ export function mediaQueryBelow(
 // Generates a media query that applies the provided style to screen sizes BETWEEN the provided size.
 export function mediaQueryBetween(
   { from, to }: { [key: string]: BreakpointName },
-  content: string
+  content: string,
 ) {
   const toBreakpoint = `${breakpoints[to]}px`;
   const fromBreakpoint = `${breakpoints[from]}px`;
@@ -60,20 +57,20 @@ export function mediaQueryBetween(
 }
 
 export function xsOnly(content: string) {
-  return mediaQueryBelow("xs", content);
+  return mediaQueryBelow('xs', content);
 }
 
 export function smOnly(content: string) {
-  return mediaQueryBetween({ from: "xs", to: "sm" }, content);
+  return mediaQueryBetween({ from: 'xs', to: 'sm' }, content);
 }
 export function mdOnly(content: string) {
-  return mediaQueryBetween({ from: "sm", to: "md" }, content);
+  return mediaQueryBetween({ from: 'sm', to: 'md' }, content);
 }
 
 export function lgOnly(content: string) {
-  return mediaQueryBetween({ from: "lg", to: "xl" }, content);
+  return mediaQueryBetween({ from: 'lg', to: 'xl' }, content);
 }
 
 export function xlOnly(content: string) {
-  return mediaQueryUp("xl", content);
+  return mediaQueryUp('xl', content);
 }

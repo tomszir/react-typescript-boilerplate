@@ -1,24 +1,24 @@
-const merge = require("webpack-merge");
+const merge = require('webpack-merge');
 
-const MinifyPlugin = require("babel-minify-webpack-plugin");
-const CompressionPlugin = require("compression-webpack-plugin");
-const DuplicateCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const MinifyPlugin = require('babel-minify-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const DuplicateCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-const common = require("./webpack.common");
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
-  mode: "production",
-  devtool: "none",
+  mode: 'production',
+  devtool: 'none',
   output: {
-    filename: "bundles/[name].[hash].bundle.js",
+    filename: 'bundles/[name].[hash].bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.(jpe?g|png|gif|svg)$/,
-        loader: "image-webpack-loader",
-        enforce: "pre",
+        loader: 'image-webpack-loader',
+        enforce: 'pre',
       },
     ],
   },
@@ -27,8 +27,8 @@ module.exports = merge(common, {
       cacheGroups: {
         commons: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          chunks: "all",
+          name: 'vendors',
+          chunks: 'all',
         },
       },
     },

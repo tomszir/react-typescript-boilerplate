@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 
 import { GlobalStyle } from './styles';
+import { ThemeProvider } from './context/theme';
 
 const App: React.FunctionComponent = () => {
-  return <div></div>;
+  return (
+    <div>
+      <h1>Hello world!</h1>
+    </div>
+  );
 };
 
 ReactDOM.render(
   <>
     <GlobalStyle />
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </>,
   document.getElementById('root'),
 );
