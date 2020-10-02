@@ -1,13 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import App from "./components/App";
-import { GlobalStyle } from "./styles";
+import { GlobalStyle } from './styles';
+
+const App: React.FunctionComponent = () => {
+  return <div></div>;
+};
 
 ReactDOM.render(
   <>
     <GlobalStyle />
     <App />
   </>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );

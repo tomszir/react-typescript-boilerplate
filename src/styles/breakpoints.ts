@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 export type BreakpointName = "xs" | "sm" | "md" | "lg" | "xl";
 
-export const breakpoints: { [key: string]: number } = {
+export const breakpoints: { [key in BreakpointName]: number } = {
   // Mobile XS
   xs: 380,
 
