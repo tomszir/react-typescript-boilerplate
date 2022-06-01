@@ -41,7 +41,7 @@
     "prettier": "^2.1.2",
     "react-is": "^17.0.0",
     "responsive-loader": "^1.2.0",
-    "sharp": "^0.25.4",
+    "sharp": "^0.30.5",
     "style-loader": "^1.2.1",
     "svg-url-loader": "^6.0.0",
     "ts-loader": "^8.0.4",
